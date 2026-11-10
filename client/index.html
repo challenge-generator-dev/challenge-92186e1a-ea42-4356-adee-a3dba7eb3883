@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sistema de gestión de órdenes con persistencia en DynamoDB" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="keywords" content="órdenes, DynamoDB, gestión, CRUD" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+    <title>Sistema de Gestión de Órdenes</title>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #1f2937;
+        background-color: #f9fafb;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .loading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .loading-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid #e5e7eb;
+        border-top-color: #2563eb;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .loading-text {
+        color: #6b7280;
+        font-size: 0.875rem;
+      }
+      .error-boundary {
+        padding: 2rem;
+        text-align: center;
+        background-color: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: 0.5rem;
+        margin: 2rem;
+      }
+      .error-title {
+        color: #dc2626;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .error-message {
+        color: #7f1d1d;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading-container">
+        <div class="loading-spinner" role="status" aria-label="Cargando aplicación"></div>
+        <span class="loading-text">Inicializando sistema de órdenes...</span>
+      </div>
+    </div>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; background: #fef2f2; color: #991b1b;">
+        <h1>JavaScript requerido</h1>
+        <p>Esta aplicación requiere JavaScript para funcionar. Por favor, habilite JavaScript en su navegador.</p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
